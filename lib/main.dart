@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_card_example/photo.dart';
 
 void main() {
   runApp(const MainApp());
@@ -11,8 +12,21 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
+        body: Row(
+          children: [
+            Flexible(
+              flex: 2,
+              child: Column(
+                children: [
+                  //
+                ],
+              ),
+            ),
+            Flexible(
+              flex: 1,
+              child: Photo(),
+            ),
+          ],
         ),
       ),
     );
