@@ -6,6 +6,7 @@ import 'contact_icon.dart';
 import 'icons.dart';
 import 'name_title.dart';
 import 'photo.dart';
+import 'tools/logger.dart';
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
@@ -33,19 +34,19 @@ class MainApp extends StatelessWidget {
                       children: [
                         ContactIcon(
                           onPressed: () {
-                            print(1);
+                            logger.info('Press telegram');
                           },
                           icon: CVIcons.telegram,
                         ),
                         ContactIcon(
                           onPressed: () {
-                            print(2);
+                            logger.info('Press github');
                           },
                           icon: CVIcons.github,
                         ),
                         ContactIcon(
                           onPressed: () {
-                            print(3);
+                            logger.info('Press email');
                           },
                           icon: CVIcons.email,
                         ),
