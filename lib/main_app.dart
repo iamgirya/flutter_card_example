@@ -1,11 +1,11 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:flutter_card_example/card_container.dart';
-import 'package:flutter_card_example/contact_icon.dart';
-import 'package:flutter_card_example/icons.dart';
-import 'package:flutter_card_example/name_title.dart';
-import 'package:flutter_card_example/photo.dart';
+import 'card_container.dart';
+import 'contact_icon.dart';
+import 'icons.dart';
+import 'name_title.dart';
+import 'photo.dart';
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
