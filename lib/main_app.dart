@@ -1,11 +1,13 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'card_container.dart';
 import 'contact_icon.dart';
 import 'icons.dart';
 import 'name_title.dart';
 import 'photo.dart';
+import 'tools/localization.dart';
 import 'tools/logger.dart';
 
 class MainApp extends StatelessWidget {
@@ -14,6 +16,16 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('en'),
+        Locale('ru'),
+      ],
       home: Scaffold(
         body: CardContainer(
           child: Row(
@@ -25,9 +37,13 @@ class MainApp extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    const NameTitle(
-                      name: 'Гиренко Даниил',
-                      companyName: 'Яндекс',
+                    Builder(
+                      builder: (context) {
+                        return NameTitle(
+                          name: S.of(context).name,
+                          companyName: S.of(context).company,
+                        );
+                      },
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
