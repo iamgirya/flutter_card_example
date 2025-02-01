@@ -7,11 +7,19 @@ import 'contact_icon.dart';
 import 'icons.dart';
 import 'name_title.dart';
 import 'photo.dart';
+import 'tools/app_theme.dart';
 import 'tools/localization.dart';
 import 'tools/logger.dart';
 
-class MainApp extends StatelessWidget {
+class MainApp extends StatefulWidget {
   const MainApp({super.key});
+
+  @override
+  State<MainApp> createState() => _MainAppState();
+}
+
+class _MainAppState extends State<MainApp> {
+  bool isDark = false;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +34,18 @@ class MainApp extends StatelessWidget {
         Locale('en'),
         Locale('ru'),
       ],
+      theme: AppTheme.theme(isDark),
       home: Scaffold(
+        floatingActionButton: IconButton(
+          onPressed: () {
+            setState(() {
+              isDark = !isDark;
+            });
+          },
+          icon: Icon(
+            isDark ? Icons.mode_night : Icons.sunny,
+          ),
+        ),
         body: CardContainer(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
